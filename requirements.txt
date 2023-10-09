@@ -2,3 +2,4 @@ flask
 africastalking 
 SQLAlchemy
 Flask-SQLAlchemy 
+gunicorn

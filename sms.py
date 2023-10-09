@@ -4,7 +4,7 @@ import africastalking
 
 # Initialize SDK
 username = "afyayaakili"    #   use 'sandbox' for development in the test environment
-api_key = "d35d634657367f9950b769ddef6aff4f0b28617ff5ba732235360b3852410b58"      # use your sandbox app API key for development in the test environment
+api_key = "21615bdc6aebdbeaeea2610e134f2bc34dd94aca4081300cf6556e52df4a47be"      # use your sandbox app API key for development in the test environment
 africastalking.initialize(username, api_key)
 
 

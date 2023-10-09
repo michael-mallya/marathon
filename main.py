@@ -1,5 +1,7 @@
 from flask import Flask, render_template,request,redirect,flash 
 from flask_sqlalchemy import SQLAlchemy
+from dotenv import load_dotenv
+load_dotenv()
 app=Flask(__name__,template_folder='website/templates',static_folder='website/static')
 app.jinja_env.auto_reload = True
 app.config["SECRET_KEY"]="kumamoto"
