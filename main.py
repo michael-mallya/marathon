@@ -45,7 +45,7 @@ if __name__ == '__main__':
     from werkzeug.middleware.proxy_fix import ProxyFix
 
     workers = os.cpu_count() * 2 + 1 if os.cpu_count() else 1
-    bind_address = "0.0.0.0:8502"
+    bind_address = "0.0.0.0:8000"
 
     app.wsgi_app = ProxyFix(app.wsgi_app, x_for=1, x_proto=1, x_host=1, x_port=1)
-    app.run(host="0.0.0.0", port=8502)
+    app.run(host="0.0.0.0", port=8000)
