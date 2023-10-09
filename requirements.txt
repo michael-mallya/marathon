@@ -3,3 +3,4 @@ africastalking
 SQLAlchemy
 Flask-SQLAlchemy 
 gunicorn
+python-dotenv
