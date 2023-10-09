@@ -1,0 +1,68 @@
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href= "{{ url_for('static',filename='css/home.css') }}"  />
+    <title> Home | Afya ya akili Marathon</title>
+  </head>
+  <body>
+  <header class="header">
+      <nav>
+        <ul>
+          <li>
+            <button class=""></button>
+          </li>
+        </ul>
+      </nav>
+      <div class="header-content">
+        <img src="{{ url_for('static',filename='img/logo.png') }}" class="logo" />
+        <img src= "{{ url_for('static',filename='img/RUN4.png') }}" class="run" />
+        <div class="ru">
+          <script src="https://cdn.logwork.com/widget/countdown.js"></script>
+          <a href="https://logwork.com/countdown-1nih" class="countdown-timer" data-timezone="Europe/London" data-textcolor="#ffffff" data-date="2023-12-09 17:28" data-background="#ee6b25" data-digitscolor="#ffffff" data-unitscolor="#000000">Countdown Time</a>
+        </div>
+         <div class="button-container">
+          <div class="">
+            <button class="btn btn-outline">DONATE</button>
+          </div>
+          <div class="">
+            <button class="btn btn-green">REGISTER</button>
+          </div>
+        </div>
+      </div>
+      </header> 
+
+      <section class="live-sports">
+        <div class="live-sports-content">
+          <div class="text-xl">Schizophrenia ni Nini</div>
+          <div class="sub-text">
+            Schizophrenia ni ugonjwa mbaya wa akili ambayo huathiri jinsi mtu anavyofikiri,hisia, na tabia.
+          </div>
+        </div>
+      </section>
+      <section class="sub-header">
+        <img src="" alt="" />
+        <div>
+        </div>
+      </section>
+    <section class="subheader">
+      <img src="" alt="" />
+      <div>
+        <img src="{{ url_for('static',filename='img/banner.png') }}" alt="" />
+      </div>
+    </section>
+    <section class="sub-header">
+      <img src="" alt="" />
+      <div>
+        
+      </div>
+    </section>
+    <footer class="footer"> 
+    </footer>
+    <script src= "{{ url_for('static',filename='js/main.js') }}" ></script>
+  </body>
+</html>
+{% endblock %}

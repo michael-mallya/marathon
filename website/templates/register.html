@@ -1,0 +1,75 @@
+{% block content %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Register | Afya Ya Akili Marathon </title>
+    <meta name="viewport" content="width=device-width,
+      initial-scale=1.0"/>
+    <link rel="stylesheet" href= "{{ url_for('static',filename='css/register.css') }}"     />
+  </head>
+  <body>
+    <div class="container"> 
+      <h1 class="form-title">Registration</h1>
+      <form method="POST" action="/register">
+        <div class="main-user-info">
+          <div class="user-input-box">
+            <label for="fullName">Full Name</label>
+            <input type="text"
+                    id="fullName"
+                    name="fullName"
+                    placeholder="Enter Full Name"/>
+          </div>
+          <div class="user-input-box">
+            <label for="phoneNumber">Phone Number</label>
+            <input type="text"
+                    id="phoneNumber"
+                    name="phoneNumber"
+                    placeholder="Enter Phone Number ; +255XXXXXXXXX"/>
+          </div>
+          <div class="gender-details-box">
+           <span class="jersey-title">Jersey size </span>
+            <div class="jersey-category">
+              <input type="radio" name="jersey" value="S">
+              <label for="S">S</label>
+              <input type="radio" name="jersey" value="M">
+              <label for="M">M</label>
+              <input type="radio" name="jersey" value="L">
+              <label for="L">L</label>
+              <input type="radio" name="gender" value="XL">
+               <label for="XL">XL</label>
+               <input type="radio" name="gender" value="XXL">
+               <label for="XXL">XL</label>
+            </div>
+          </div>
+          <div class="gender-details-box">
+            <span class="kilometer-title">Number of Kilometers</span>
+            <div class="kilometer-category">
+              <input type="radio" name="Kilometer" value="2.5km">
+              <label for="2.5km">2.5 km</label>
+              <input type="radio" name="kilometer" value="5km">
+              <label for="5km">5 km </label>
+              <input type="radio" name="kilometer" value="10km">
+              <label for="10km">10 km</label>
+              <input type="radio" name="kilometer" value="21km">
+              <label for="21km">21 km</label>
+            </div>
+            <div class="gender-details-box">
+              <span class="package-title">Package </span>
+              <div class="package-category">
+                  <input type="radio" name="package" value="Standard">
+                  <label for="Standard">Standard (TZS 25,000)</label>
+                  <input type="radio" name="package" value="Student">
+                  <label for="Student">Student (TZS 20,000)</label>
+              </div>
+          </div>
+          </div>
+        </div>
+        <div class="form-submit-btn">
+          <input type="submit" value="Register">
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
+{% endblock %}
