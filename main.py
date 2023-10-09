@@ -16,7 +16,7 @@ class User(db.Model):
     package = db.Column(db.String(10))
 
 with app.app_context():
-    db.create_all()
+    db.create_all() 
 
 @app.route("/")
 def home():
@@ -41,4 +41,11 @@ def register():
      return render_template('register.html') 
 
 if __name__ == '__main__':
-    app.run()
+    import os
+    from werkzeug.middleware.proxy_fix import ProxyFix
+
+    workers = os.cpu_count() * 2 + 1 if os.cpu_count() else 1
+    bind_address = "0.0.0.0:8502"
+
+    app.wsgi_app = ProxyFix(app.wsgi_app, x_for=1, x_proto=1, x_host=1, x_port=1)
+    app.run(host="0.0.0.0", port=8502)
