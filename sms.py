@@ -13,8 +13,7 @@ sms = africastalking.SMS
 
 
 # Use the service synchronously
-response = sms.send("Hello,We're thrilled to inform you that your registration for the Run 4 Schizophrenia event has been successfully received! 🎉 You're now officially part of the Afya ya Akili Marathon on December 10th, 2023, where we'll run for a great cause.", 
-                    ["+255766927069"])
+response = sms.send("Hello,you have registered with Hekima platform",["+255715495201"])
 print(response)
 '''
 # Or use it asynchronously
