@@ -26,6 +26,9 @@ class User(db.Model):
 
 with app.app_context():
     db.create_all() 
+# Message templates in Swahili and English
+welcome_message_swahili = "Karibu sana, {}! Umejiandikisha kwa Marathon ya Afya ya Akili. Tunakutakia kila la heri katika mbio zako za {} kilomita na chaguo lako ni {}. Tuna furaha kuwa na wewe!"
+welcome_message_english = "Welcome, {}! You have registered for the Afya ya Akili Marathon. We wish you the best in your {} kilometers run, and your chosen package is {}. We're thrilled to have you!"
 
 @app.route("/")
 def home():
@@ -52,15 +55,22 @@ def register():
         db.session.add(new_values)
         db.session.commit()
         
-        # Send an SMS notification
-        message = f"Hello, you have registered with Afya ya akili marathon"
-        response = sms.send(message, [phoneNumber])
+        # Compose the Swahili and English messages with user details
+        swahili_message = welcome_message_swahili.format(fullName, kilometer, package)
+        english_message = welcome_message_english.format(fullName, kilometer, package)
+        
+        # Send SMS notifications in both Swahili and English
+        response_swahili = sms.send(swahili_message, [phoneNumber])
+        response_english = sms.send(english_message, [phoneNumber])
         
         # Flash a message to indicate successful registration
         flash("Registration successful! You will receive an SMS notification shortly.")
         return redirect("/register")
     
     return render_template('register.html')
+
+
+
 if __name__ == '__main__':
     import os
     from werkzeug.middleware.proxy_fix import ProxyFix
